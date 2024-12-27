@@ -1,0 +1,38 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3f51b5;
+    padding: 10px 0;
+}
+
+header form {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    max-width: 800px;
+}
+
+header input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+header button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #303f9f;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #1c2d69;
+}
