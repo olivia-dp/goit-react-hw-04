@@ -1,10 +1,11 @@
 import SearchBar from './components/SearchBar/SearchBar'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { fetchImages } from './services/api';
 import Loader from './components/Loader/Loader';
 import toast from 'react-hot-toast';
 import ImageGallery from './components/ImageGallery/ImageGallery/ImageGallery';
 import ErrorMessage from './components/ErrorMessage/ErrorMessage';
+import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
       setIsError(false);
 
       const data = await fetchImages({ query: newQuery, page: newPage });
-      console.log("Fetching images with:", { query: newQuery, page: newPage });
+      
       setImages((prev) => (newPage === 1 ? data : [...prev, ...data]));
     } catch (error) {
       setIsError(true);
@@ -52,15 +53,13 @@ function App() {
   };
 
   return (
-    <div>
+    <>
       <SearchBar onSubmit={handleChangeQuery} />
       {images.length > 0 && <ImageGallery images={images} />}
-      {images.length > 0 && !isLoading && (
-        <button onClick={handleChangePage}>Load more</button>
-      )}
+      {images.length > 0 && !isLoading && <LoadMoreBtn handleChangePage={handleChangePage}/>}
       {isLoading && <Loader />}
       {isError && <ErrorMessage />} 
-    </div>
+    </>
   );
 }
 
