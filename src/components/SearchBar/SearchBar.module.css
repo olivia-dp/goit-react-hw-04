@@ -2,7 +2,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #3f51b5;
+    background-color: #4d4f5c;
     padding: 10px 0;
     margin: 0;
 }
@@ -10,8 +10,9 @@ header {
 header form {
     display: flex;
     align-items: center;
-    width: 60%;
-    max-width: 800px;
+    width: 700px;
+    position: relative;
+    padding: 0;
 }
 
 header input {
@@ -19,21 +20,23 @@ header input {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
+    border-radius: 4px;
     outline: none;
 }
+header input::placeholder {
+    font-size: 14px;
+}
 
-header button {
+.searchBtn {
     padding: 10px 20px;
     font-size: 16px;
-    color: white;
-    background-color: #303f9f;
+    color: #4d4f5c;
+    background-color: inherit;
     border: none;
     border-radius: 0 4px 4px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    position: absolute;
+    right: 5px;
 }
 
-header button:hover {
-    background-color: #1c2d69;
-}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
-import "./SearchBar.module.css"
+import s from "./SearchBar.module.css";
+import { TbSearch } from "react-icons/tb";
 
 const SearchBar = ({ onSubmit }) => {
   const [query, setQuery] = useState("");
@@ -34,7 +35,7 @@ const SearchBar = ({ onSubmit }) => {
           value={query}
           onChange={handleInputChange}
         />
-        <button type="submit">Search</button>
+        <button className={s.searchBtn} type="submit" ><TbSearch /></button>
       </form>
     </header>
   );
